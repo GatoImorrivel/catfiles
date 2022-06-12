@@ -1,0 +1,176 @@
+@import "~/.config/rofi/colorscheme.rasi"
+
+configuration {
+    lines:                  10;
+    columns:                1;
+    font:                   "JetBrains Mono 14";
+    bw:                     0;
+    location:               7;
+    padding:                0;
+    fixed-num-lines:        true;
+    show-icons:             true;
+    icon-theme:             "candy-icons";
+    sidebar-mode:           true;
+    separator-style:        "none";
+    hide-scrollbar:         true;
+    fullscreen:             false;
+    fake-transparency:      false;
+    scroll-method:          0;
+    window-format:          "[{w}] ··· {c} ···   {t}";
+    click-to-exit:          true;
+    show-match:             false;
+    combi-hide-mode-prefix: false;
+    display-window:         " ";
+    display-windowcd:       " ";
+    display-run:            " ";
+    display-ssh:            " ";
+    display-drun:           " ";
+    display-combi:          " ";
+}
+
+window {
+    border:               2px;
+    border-color:         @background;
+    background-color:     @background;
+    width:                35%;
+    height:               98%;
+    width:                20%;
+}
+
+prompt {
+    spacing: 		          0;
+    border: 			        0;
+    text-color:           @primary;
+    background-color:     @background;
+}
+
+textbox-prompt-colon {
+    expand:               false;
+    str: 					        " ";
+    margin:				        0px 4px 0px 0px;
+    text-color:           inherit;
+    background-color:     @background;
+}
+
+entry {
+    background-color:     @background;
+    spacing:    					0;
+    text-color: 					@foreground;
+}
+
+case-indicator {
+    background-color:     @background;
+    spacing:    					0;
+    text-color: 					@background;
+}
+
+inputbar {
+    background-color:     @background;
+    spacing:    					0px;
+    text-color: 					@foreground;
+    padding:    					10px;
+    children: 						[ prompt,textbox-prompt-colon,entry,case-indicator ];
+}
+
+mainbox {
+    border: 						  0px;
+    border-color: 			  @background;
+    background-color:     @background;
+    border-radius:        15px;
+    padding: 						  6;
+}
+
+listview {
+    fixed-height: 				0;
+    border: 						  0px;
+    border-color: 				@background;
+    spacing: 						  4px;
+    scrollbar: 						true;
+    padding: 						  5px 5px 0px 5px;
+    background-color:     @background;
+}
+
+element {
+    border: 						  0px;
+    border-radius: 				4px;
+    padding: 						  5px;
+}
+element normal.normal {
+    background-color: 				@background;
+    text-color:       				@primary;
+}
+element normal.urgent {
+    background-color: 				@background;
+    text-color:       				@primary;
+}
+element normal.active {
+    background-color: 				@background;
+    text-color:       				@primary;
+}
+element selected.normal {
+    background-color: 				@background-alt;
+    text-color:       				@foreground;
+}
+element selected.urgent {
+    background-color: 				@background-alt;
+    text-color:       				@foreground;
+}
+element selected.active {
+    background-color: 				@background-alt;
+    text-color:       				@foreground;
+}
+element alternate.normal {
+    background-color: 				@background;
+    text-color:       				@primary;
+}
+element alternate.urgent {
+    background-color: 				@background;
+    text-color:       				@primary;
+}
+element alternate.active {
+    background-color: 				@background;
+    text-color:       				@primary;
+}
+
+element-text, element-icon {
+    background-color:         inherit;
+    text-color:               inherit;
+}
+
+sidebar {
+    border:       					  0px;
+    border-color: 					  @primary;
+    border-radius: 					  0px;
+    color:                    @primary;
+}
+
+button {
+    text-color: 					    @primary;
+    background-color:         @background;
+}
+
+button selected {
+    text-color: 					    @primary;
+    background-color:         @background;
+}
+
+scrollbar {
+    width:        					  4px;
+    border:       					  0px;
+    handle-color: 					  @secondary;
+    handle-width: 					  8px;
+    padding:      					  0;
+    background-color:         @background;
+}
+
+message {
+    border: 						      0px;
+    border-color: 					  @background;
+    padding: 						      1px;
+    background-color:         @background;
+}
+
+textbox {
+    text-color: 					    @primary;
+    background-color:         @background;
+}
