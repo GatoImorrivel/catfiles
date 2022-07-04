@@ -32,7 +32,7 @@ window {
     border:               2px;
     border-color:         @background;
     background-color:     @background;
-    height:               97.35%;
+    height:               97%;
     width:                18%;
 }
 
