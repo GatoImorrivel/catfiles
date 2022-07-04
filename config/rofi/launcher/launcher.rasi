@@ -9,8 +9,8 @@ configuration {
     padding:                0;
     fixed-num-lines:        true;
     show-icons:             true;
-    icon-theme:             "candy-icons";
-    sidebar-mode:           true;
+    icon-theme:             "dracula-icons";
+    sidebar-mode:           false;
     separator-style:        "none";
     hide-scrollbar:         true;
     fullscreen:             false;
@@ -24,7 +24,7 @@ configuration {
     display-windowcd:       " ";
     display-run:            " ";
     display-ssh:            " ";
-    display-drun:           " ";
+    display-drun:           "";
     display-combi:          " ";
 }
 
@@ -32,9 +32,8 @@ window {
     border:               2px;
     border-color:         @background;
     background-color:     @background;
-    width:                35%;
-    height:               98%;
-    width:                20%;
+    height:               97.35%;
+    width:                18%;
 }
 
 prompt {
@@ -42,6 +41,7 @@ prompt {
     border: 			        0;
     text-color:           @primary;
     background-color:     @background;
+    margin: 4 0 0 0;
 }
 
 textbox-prompt-colon {
@@ -145,11 +145,6 @@ sidebar {
 }
 
 button {
-    text-color: 					    @primary;
-    background-color:         @background;
-}
-
-button selected {
     text-color: 					    @primary;
     background-color:         @background;
 }

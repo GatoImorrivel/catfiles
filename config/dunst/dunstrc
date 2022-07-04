@@ -13,14 +13,14 @@ separator_height = 2
 padding = 8
 horizontal_padding = 13
 frame_width = 8
-frame_color = "#1E1E2E"
-separator_color = "#302D41"
+frame_color = "#282a36"
+separator_color = "#44475a"
 
 font = "JetBrains Mono"
 
 line_height = 0
 markup = full
-format = "<span size='x-large' font_desc='' weight='Bold' foreground='#F5C2E7'>%s</span>\n\n%b"
+format = "<span size='x-large' font_desc='' weight='Bold' foreground='#bd93f9'>%s</span>\n\n%b"
 alignment = center
 
 idle_threshold = 120
@@ -38,8 +38,6 @@ corner_radius = 12
 icon_position = left
 max_icon_size = 96
 
-icon_path = /usr/share/icons/Papirus-Dark-Custom/48x48/actions/:/usr/share/icons/Papirus-Dark-Custom/48x48/apps/:/usr/share/icons/Papirus-Dark-Custom/48x48/devices/:/usr/share/icons/Papirus-Dark-Custom/48x48/emblems/:/usr/share/icons/Papirus-Dark-Custom/48x48/emotes/:/usr/share/icons/Papirus-Dark-Custom/48x48/mimetypes/:/usr/share/icons/Papirus-Dark-Custom/48x48/places/:/usr/share/icons/Papirus-Dark-Custom/48x48/status/
-
 browser = firefox
 
 mouse_left_click = do_action
@@ -55,20 +53,20 @@ context = ctrl+shift+period
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#1E1E2E"
-    foreground = "#D9E0EE"
+    background = "#282a36"
+    foreground = "#bd93f9"
     timeout = 5
     # Icon for notifications with low urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_normal]
-    background = "#1E1E2E"
-    foreground = "#D9E0EE"
+    background = "#282a36"
+    foreground = "#ffb86c"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #icon = /path/to/icon
 
 [urgency_critical]
-    background = "#1E1E2E"
-    foreground = "#D9E0EE"
+    background = "#282a36"
+    foreground = "#ff5555"
     timeout = 120
