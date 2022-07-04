@@ -1,0 +1,3 @@
+#!/bin/bash
+
+sudo cp $1 /usr/share/grub/themes/vimix/background.jpg
