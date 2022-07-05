@@ -5,4 +5,4 @@ but i have tested it with the average laptop screen and it worked
 
 # Installation
 
-<img href="./screenshots/unknown.png" alt="pic1">
+<img src="./screenshots/unknown.png" alt="pic1">
