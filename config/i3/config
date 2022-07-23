@@ -17,8 +17,6 @@ floating_modifier $mod
 bindsym $mod+Return exec kitty
 bindsym $mod+d exec rofi -modi drun -show drun -theme ~/.config/rofi/launcher/launcher.rasi
 bindsym --release $mod+Shift+s exec import temp.png && xclip -selection clipboard -target image/png -i < temp.png && rm temp.png && notify-send -u low "Screenshot taken"
-bindsym $mod+Shift+Right exec xbacklight -inc 5
-bindsym $mod+Shift+Left exec xbacklight -dec 5
 
 # kill focused window
 bindsym $mod+q kill
@@ -103,11 +101,13 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # autostart
-# exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
-exec_always --no-startup-id dunst
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
+exec_always --no-startup-id dunst
 exec_always --no-startup-id setwallpaper $(cat ~/.currentwallpaper)  
 exec_always --no-startup-id sh $HOME/.config/polybar/launch.sh 
+exec --no-startup-id i3-msg "workspace 9; exec discord"
+exec --no-startup-id i3-msg "workspace 9; exec steam"
+exec --no-startup-id xrandr --output HDMI-0 --rate 74.97 --mode 1920x1080 --primary
 exec --no-startup-id nm-applet
 
 # Start XDG autostart .desktop files using dex. See also
