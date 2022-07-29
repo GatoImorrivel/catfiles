@@ -1,3 +1,5 @@
+set nocompatible
+
 " term
 set title
 
@@ -17,6 +19,7 @@ set smartindent
 set tabstop=2
 set shiftwidth=2
 set expandtab
+set noshowmode
 
 " swap tomfoolery
 set directory=$HOME/vimswp//
@@ -43,6 +46,7 @@ filetype plugin indent on
 filetype indent on
 set hlsearch
 set termguicolors
+set showtabline=2
 
 " gui
 set guifont=Symbols\ Nerd\ Font:h14
@@ -57,21 +61,50 @@ nnoremap ; :
 
 nmap <leader>e <Cmd>CocCommand explorer<CR>
 
-
-
 " plugin tomfoolery beings
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'dracula/vim', { 'as': 'dracula' } 
+Plug 'drewtempelmeyer/palenight.vim'
 Plug 'tpope/vim-surround'
+Plug 'Shougo/denite.nvim'
+Plug 'w0rp/ale'
+Plug 'pangloss/vim-javascript'
+Plug 'yuezk/vim-js'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
+Plug 'alvan/vim-closetag'
 
 call plug#end()
 " plugin tomfoolery ends
 
-colorscheme dracula
+" ALE
+let g:ale_linters = {
+        \ 'typescript': ['prettier'],
+        \ 'javascript': ['eslint'],
+        \ 'c': [],
+        \ 'cpp': []
+        \}
+let g:ale_fix_on_save = 1
+
+" js
+let g:javascript_plugin_jsdoc = 1
+
+" auto close tags
+let g:closetag_filenames = '*.blade.php,*.html,*.xhtml,*.xml,*.js,*.jsx,*.tsx,*.html.erb,*.md'
+let g:closetag_xhtml_filenames = '*.js,*.jsx,*.tsx'
+
+" colors
+set background=dark
+colorscheme palenight
+let g:airline_theme = "palenight"
 
 let g:airline_symbols_ascii = 1
+
+if system('pgrep -x picom > /dev/null && echo 1 || echo 0') == 1
+	highlight Normal guibg=NONE
+else
+	highlight Normal guibg=#282A36
+endif
