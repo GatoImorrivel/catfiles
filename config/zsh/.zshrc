@@ -4,6 +4,12 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+typeset -U path PATH
+path=(~/.local/bin ~/.cargo/bin $(yarn global bin) $path)
+export PATH
+
+export EDITOR=nvim
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -100,3 +106,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source /usr/share/nvm/init-nvm.sh
+
+# Custom ls output
+alias ls='exa --icons --color=always --group-directories-first'
+alias ll='exa -alF --icons --color=always --group-directories-first'
+alias la='exa -a --icons --color=always --group-directories-first'
+alias l='exa -F --icons --color=always --group-directories-first'
+alias l.='exa -a | egrep "^\."'
