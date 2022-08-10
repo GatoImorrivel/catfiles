@@ -125,15 +125,22 @@ function! s:denite_my_settings() abort
   \ denite#do_map('do_action', 'split')
 endfunction
 
+" Prettier
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+vmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+" use <tab> for trigger completion
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
+
+" use <C-S> to save
+noremap <silent> <C-S>          :update<CR>
+vnoremap <silent> <C-S>         <C-C>:update<CR>
+inoremap <silent> <C-S>         <C-O>:update<CR>
+
 " colors
 set background=dark
-colorscheme palenight
-let g:airline_theme = "palenight"
+colorscheme dracula
+let g:airline_theme = 'dracula'
 
 let g:airline_symbols_ascii = 1
-
-if system('pgrep -x picom > /dev/null && echo 1 || echo 0') == 1
-	highlight Normal guibg=NONE
-else
-	highlight Normal guibg=#282A36
-endif
