@@ -76,6 +76,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'alvan/vim-closetag'
+Plug 'windwp/nvim-autopairs'
 
 call plug#end()
 " plugin tomfoolery ends
@@ -84,6 +85,7 @@ call plug#end()
 let g:ale_linters = {
         \ 'typescript': ['prettier'],
         \ 'javascript': ['eslint'],
+        \ 'rust': ['analyzer'],
         \ 'c': [],
         \ 'cpp': []
         \}
@@ -127,8 +129,8 @@ endfunction
 
 " Prettier
 command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
-vmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+vmap <leader>f  :Prettier<CR>
+nmap <leader>f  :Prettier<CR>
 
 " use <tab> for trigger completion
 inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
@@ -140,7 +142,11 @@ inoremap <silent> <C-S>         <C-O>:update<CR>
 
 " colors
 set background=dark
-colorscheme dracula
-let g:airline_theme = 'dracula'
+colorscheme palenight
+let g:airline_theme = 'palenight'
 
 let g:airline_symbols_ascii = 1
+
+lua << EOF
+require("nvim-autopairs").setup {}
+EOF
