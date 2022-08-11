@@ -135,6 +135,9 @@ nmap <leader>f  :Prettier<CR>
 " use <tab> for trigger completion
 inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
 
+" space to trigger autocomplete
+inoremap <silent><expr> <c-space> coc#refresh()
+
 " use <C-S> to save
 noremap <silent> <C-S>          :update<CR>
 vnoremap <silent> <C-S>         <C-C>:update<CR>
