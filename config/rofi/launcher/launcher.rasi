@@ -1,171 +1,89 @@
 @import "~/.config/rofi/colorscheme.rasi"
 
 configuration {
-    lines:                  10;
-    columns:                1;
-    font:                   "JetBrains Mono 14";
-    bw:                     0;
-    location:               7;
-    padding:                0;
-    fixed-num-lines:        true;
-    show-icons:             true;
-    icon-theme:             "dracula-icons";
-    sidebar-mode:           false;
-    separator-style:        "none";
-    hide-scrollbar:         true;
-    fullscreen:             false;
-    fake-transparency:      false;
-    scroll-method:          0;
-    window-format:          "[{w}] ··· {c} ···   {t}";
-    click-to-exit:          true;
-    show-match:             false;
-    combi-hide-mode-prefix: false;
-    display-window:         " ";
-    display-windowcd:       " ";
-    display-run:            " ";
-    display-ssh:            " ";
-    display-drun:           "";
-    display-combi:          " ";
+  modi: "window,run,drun";
+  show-icons: true;
+  location: 2;
+  font: "Iosevka 12";
+  drun-display-format: "{name}";
+  display-drun: "";
 }
 
 window {
-    border:               2px;
-    border-color:         @background;
-    background-color:     @background;
-    height:               97%;
-    width:                18%;
-}
-
-prompt {
-    spacing: 		          0;
-    border: 			        0;
-    text-color:           @primary;
-    background-color:     @background;
-    margin: 4 0 0 0;
-}
-
-textbox-prompt-colon {
-    expand:               false;
-    str: 					        " ";
-    margin:				        0px 4px 0px 0px;
-    text-color:           inherit;
-    background-color:     @background;
-}
-
-entry {
-    background-color:     @background;
-    spacing:    					0;
-    text-color: 					@foreground;
-}
-
-case-indicator {
-    background-color:     @background;
-    spacing:    					0;
-    text-color: 					@background;
-}
-
-inputbar {
-    background-color:     @background;
-    spacing:    					0px;
-    text-color: 					@foreground;
-    padding:    					10px;
-    children: 						[ prompt,textbox-prompt-colon,entry,case-indicator ];
-}
-
-mainbox {
-    border: 						  0px;
-    border-color: 			  @background;
-    background-color:     @background;
-    border-radius:        15px;
-    padding: 						  6;
-}
-
-listview {
-    fixed-height: 				0;
-    border: 						  0px;
-    border-color: 				@background;
-    spacing: 						  4px;
-    scrollbar: 						true;
-    padding: 						  5px 5px 0px 5px;
-    background-color:     @background;
+  border: 2px;
+  border-color: @bg-color;
+  background-color: @bg-color;
+  height: 16%;
+  width: 50%;
+  border: 0 5 5 5;
+  border-radius: 0 0 20 20;
+  border-color: @color5;
 }
 
 element {
-    border: 						  0px;
-    border-radius: 				4px;
-    padding: 						  5px;
-}
-element normal.normal {
-    background-color: 				@background;
-    text-color:       				@primary;
-}
-element normal.urgent {
-    background-color: 				@background;
-    text-color:       				@primary;
-}
-element normal.active {
-    background-color: 				@background;
-    text-color:       				@primary;
-}
-element selected.normal {
-    background-color: 				@background-alt;
-    text-color:       				@foreground;
-}
-element selected.urgent {
-    background-color: 				@background-alt;
-    text-color:       				@foreground;
-}
-element selected.active {
-    background-color: 				@background-alt;
-    text-color:       				@foreground;
-}
-element alternate.normal {
-    background-color: 				@background;
-    text-color:       				@primary;
-}
-element alternate.urgent {
-    background-color: 				@background;
-    text-color:       				@primary;
-}
-element alternate.active {
-    background-color: 				@background;
-    text-color:       				@primary;
+  padding: 5 0 5 0;
+  margin: 0 5 0 5;
+  text-color: @color2;
+  background-color: @bg-alt;
+  border-radius: 5;
+  orientation: vertical;
 }
 
-element-text, element-icon {
-    background-color:         inherit;
-    text-color:               inherit;
+element selected {
+  text-color: @bg-color;
+  background-color: @color5;
 }
 
-sidebar {
-    border:       					  0px;
-    border-color: 					  @primary;
-    border-radius: 					  0px;
-    color:                    @primary;
+element-text {
+  background-color: inherit;
+  padding: 0 15 5 15;
+  text-color: inherit;
+  vertical-align: 0.5;
+  horizontal-align: 0.5;
 }
 
-button {
-    text-color: 					    @primary;
-    background-color:         @background;
+element-icon {
+  size: 50;
+  margin: 0 0 -5 0;
+  horizontal-align: 0.5;
+  background-color: inherit;
 }
 
-scrollbar {
-    width:        					  4px;
-    border:       					  0px;
-    handle-color: 					  @secondary;
-    handle-width: 					  8px;
-    padding:      					  0;
-    background-color:         @background;
+entry {
+  background-color: @bg-alt;
+  padding: 12;
+  text-color: @fg-color;
+  placeholder: "Search...";
+  placeholder-color: @color2;
+  vertical-align: 0.7;
 }
 
-message {
-    border: 						      0px;
-    border-color: 					  @background;
-    padding: 						      1px;
-    background-color:         @background;
+inputbar {
+  padding: 0 0 0 16;
+  background-color: @bg-alt;
+  children: [prompt, entry];
 }
 
-textbox {
-    text-color: 					    @primary;
-    background-color:         @background;
+listview {
+  padding: 15 15 15 15;
+  background-color: #00000000;
+  columns: 5;
+  lines: 1;
+  fixed-lines: true;
+}
+
+mainbox {
+  background-color: @bg-color;
+  children: [inputbar, listview];
+}
+
+prompt {
+  background-color: @color5;
+  enabled: true;
+  padding: 6 8 6 10;
+  border: 4;
+  border-color: @bg-alt;
+  text-color: @bg-color;
+  font: "Iosevka 16";
+  vertical-align: 0.7;
 }

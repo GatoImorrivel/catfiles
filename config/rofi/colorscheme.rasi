@@ -1,7 +1,10 @@
 * {
-  foreground: #f8f8f2;
-  primary: #bd93f9;
-  secondary: #ff79c6;
-  background-alt: #44475a;
-  background: #282a36;
+  bg-color: #0C161A;
+  bg-alt: #0e1b20;
+  fg-color: #f8f8f2;
+  color1: #e9c46a;
+  color2: #264653;
+  color3: #f4a261;
+  color4: #e76f51;
+  color5: #2a9d8f;
 }

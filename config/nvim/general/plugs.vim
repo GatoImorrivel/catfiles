@@ -3,6 +3,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'dracula/vim', { 'as': 'dracula' } 
 Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
+Plug 'KabbAmine/vCoolor.vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -18,5 +19,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'romgrk/barbar.nvim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'elkowar/yuck.vim'
 
 call plug#end()

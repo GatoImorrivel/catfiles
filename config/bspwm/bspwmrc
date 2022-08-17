@@ -1,0 +1,33 @@
+#! /bin/sh
+
+killall -w sxhkd
+
+# Autostart
+sxhkd &
+picom --experimental-backends &
+dunst &
+
+setwallpaper $(cat $HOME/.currentwallpaper)
+
+# Monitors
+bspc monitor -d 1 2 3 4 5 6 7
+
+# Mouse configs
+bspc config pointer_modifier mod4
+bspc config pointer_action1 move
+bspc config pointer_action2 resize_corner
+bspc config focus_follows_pointer true
+
+# Settings
+bspc config focused_border_color    "#e9c46a"  
+bspc config normal_border_color     "#0c161a"
+
+bspc config border_width        2
+bspc config window_gap          5
+bspc config left_padding        60
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+# Rules

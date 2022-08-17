@@ -1,0 +1,54 @@
+@import "../colors.scss";
+
+* {
+  all: unset;
+}
+
+.workspace-icon {
+  padding: 4pt 0pt;
+  font-size: 15pt;
+
+  &.active {
+    color: $color1;
+    border-right: 2pt solid $color1;
+  }
+
+  &.empty {
+    color: $color2;
+  }
+  
+  &.occupied {
+    color: $color3;
+  }
+
+  &.urgent {
+    color: $color4;
+  }
+}
+
+.workspaces {
+  padding: 8pt 0pt;
+  border-bottom-right-radius: 15pt;
+  border: 5pt solid $bg-color;
+  background-color: $bg-color-alt;
+}
+
+.search-btn {
+  background-color: $color5;
+  color: $bg-color;
+  border: 5pt solid $bg-color;
+  padding: 10pt;
+  font-size: 1.2rem;
+}
+
+.menu-btn {
+  font-size: 1.3rem;
+  background-color: $color1;
+  color: $bg-color;
+  border: 5pt solid $bg-color;
+  padding: 10pt;
+}
+
+.bar {
+  background-color: $bg-color;
+}

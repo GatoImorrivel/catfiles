@@ -1,0 +1,48 @@
+;;;;;;;;;;;;;;;;
+;; Vars
+;;;;;;;;;;;;;;;;
+
+(deflisten workspaces "bar/scripts/workspaces.sh")
+
+;;;;;;;;;;;;;;;;
+;; Widgets
+;;;;;;;;;;;;;;;;
+
+(defwidget bar-content []
+  (box :class "bar"
+       :orientation "v"
+       :space-evenly false
+    (menu-btn)
+    (search-btn)
+    (literal :content workspaces))
+)
+
+(defwidget search-btn []
+  (button :class "search-btn"
+          :onclick "rofi -modi drun -show drun -theme ~/.config/rofi/launcher/launcher.rasi" 
+    ""
+  )
+)
+
+(defwidget menu-btn []
+  (button :class "menu-btn"
+          :onclick "rofi -modi drun -show drun -theme ~/.config/rofi/launcher/launcher.rasi" 
+    ""
+  )
+)
+
+;;;;;;;;;;;;;;;;
+;; Windows
+;;;;;;;;;;;;;;;;
+
+(defwindow bar
+          :monitor 0
+          :geometry (geometry :x "0%"
+                              :y "0%"
+                              :width "3%"
+                              :height "100%"
+                              :anchor "top left")
+          :stacking "bg"
+          :windowtype "dock"
+          :wm-ignore false
+(bar-content))
