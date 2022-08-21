@@ -24,7 +24,6 @@ return require('packer').startup(function()
     end
   })
   use 'KabbAmine/vCoolor.vim'
-  use { 'GatoImorrivel/gatoblush.nvim', as = 'gatoblush' }
   use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
   use "lukas-reineke/indent-blankline.nvim"
   use {
@@ -34,4 +33,5 @@ return require('packer').startup(function()
     end
   }
   use 'voldikss/vim-floaterm'
+  use 'navarasu/onedark.nvim'
 end)

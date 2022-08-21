@@ -28,7 +28,7 @@ local M = {}
 -- Mode module
 function M.mode()
   local current_mode = vim.api.nvim_get_mode().mode
-	local icon_color = "%#StatuslineIcons#"
+  local icon_color = "%#StatuslineIcons#"
   return string.format("%s %s", modes[current_mode], icon_color)
 end
 
