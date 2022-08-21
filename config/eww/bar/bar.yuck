@@ -2,32 +2,75 @@
 ;; Vars
 ;;;;;;;;;;;;;;;;
 
-(deflisten workspaces "bar/scripts/workspaces.sh")
+(deflisten WORKSPACES "bar/scripts/workspaces.sh")
+
+(defpoll HOURS :interval "1s" `date +%H`)
+(defpoll MINUTES :interval "1s" `date +%M`)
+
+;; changet this to the path of your image
+(defvar AVATAR "/home/gato/.face")
 
 ;;;;;;;;;;;;;;;;
 ;; Widgets
 ;;;;;;;;;;;;;;;;
 
+;; Bar sections
+
 (defwidget bar-content []
-  (box :class "bar"
+  (centerbox :class "bar"
+             :orientation "v"
+    (bar-top)
+    (bar-middle)
+    (bar-bottom))
+)
+
+(defwidget bar-top []
+  (box :class "bar-top"
        :orientation "v"
        :space-evenly false
     (menu-btn)
     (search-btn)
-    (literal :content workspaces))
+    (literal :content WORKSPACES)) 
 )
+
+(defwidget bar-middle []
+  (box :class "bar-middle"
+       :orientation "v"
+       :space-evenly false
+  " ")
+)
+
+(defwidget bar-bottom []
+  (box :class "bar-bottom"
+       :orientation "v"
+       :valign "end"
+       :space-evenly false
+    (time))
+)
+
+;; Modules
 
 (defwidget search-btn []
   (button :class "search-btn"
-          :onclick "rofi -modi drun -show drun -theme ~/.config/rofi/launcher/launcher.rasi" 
+          :onclick "rofi -show drun -theme ~/.config/rofi/launcher/launcher.rasi &" 
+          :tooltip "Open Rofi"
     ""
   )
 )
 
 (defwidget menu-btn []
   (button :class "menu-btn"
-          :onclick "rofi -modi drun -show drun -theme ~/.config/rofi/launcher/launcher.rasi" 
+          :onclick "rofi -show drun -theme ~/.config/rofi/launcher/launcher.rasi &" 
+          :tooltip "Open Dashboard"
     ""
+  )
+)
+
+(defwidget time []
+  (box :class "time"
+       :orientation "v"
+    (box :class "time-hours" HOURS) 
+    (box :class "time-minutes" MINUTES)
   )
 )
 

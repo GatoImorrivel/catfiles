@@ -35,7 +35,7 @@ generate_yuck() {
 
 workspace_module() {
 
-  array_names=(1 2 3 4 5 6 7)
+  array_names=(1 2 3 4 5)
 
   result=""
 

@@ -33,4 +33,5 @@ return require('packer').startup(function()
       require('gitsigns').setup()
     end
   }
+  use 'voldikss/vim-floaterm'
 end)
