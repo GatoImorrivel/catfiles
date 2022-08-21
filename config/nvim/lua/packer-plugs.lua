@@ -34,4 +34,5 @@ return require('packer').startup(function()
   }
   use 'voldikss/vim-floaterm'
   use 'navarasu/onedark.nvim'
+  use 'andweeb/presence.nvim'
 end)

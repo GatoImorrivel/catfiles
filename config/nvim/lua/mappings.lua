@@ -17,4 +17,5 @@ map('i', '<C-S>', '<C-O>:update<CR>', optionSilent)
 vim.cmd([[
   inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
   inoremap <silent><expr> <c-space> coc#refresh()
+  nnoremap <silent> <leader>h :call CocActionAsync('doHover')<cr>
 ]])
